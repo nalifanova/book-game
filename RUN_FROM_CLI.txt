@@ -1,0 +1,2 @@
+g++ -std=c++17 main.cpp `~/pet/libs/wxWidgets-3.2.4/buildOSX/wx-config --libs --cxxflags` -o main.o
+g++ -std=c++17 main.cpp  -o main.o

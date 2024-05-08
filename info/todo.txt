@@ -1,0 +1,34 @@
+That's the process of learning C++ during a Game development.
+-------------------------------------------------------------
+Topics:
+    - data types: int, string, float, array, vector, map
+    - structures like: struct and simple classes
+    - libraries: iostream, cctype, vector, map, algorithm
+    - read/write from/to file
+
+
+Questions:
+    Q1: What topic I'm working on?
+    Q2: What I am struggling with
+    Q3: What I am gonna do?
+-------------------------------------------------------------
+Answers:
+    A1: It is clear when I need to use "passing by reference"
+        but not clear yet when should I use pointers
+    A2: interactive conversation with a user in CLI and/or in GUI
+    A3:
+
+
+# TODO: my questions from perspective of a py dev
+# open questions:
+- use the proper way to write classes
+- connect to the database
+    (https://github.com/jtv/libpqxx)
+    (https://pqxx.org/libpqxx/)
+- classes can be inherited as private! constructor can be virtual! how mro works
+  here?
+- virtual functions/methods: https://www.bogotobogo.com/cplusplus/virtualfunctions.php
+- work with for loops (why do we need to create iterators there? what benefits?)
+- how to work with db, is there a standard lib or an external?
+- GUI is a nightmare, need to choose the lib with nice documentation/community
+- x ^= true; - toggle bool value (read about boolean operations)
