@@ -6,7 +6,7 @@
 #include "headers/globals.h"
 #include "headers/object_factory.h"
 
-void fight_with_raul(Player &player)
+void fight_with_raul(Player& player)
 {
     Human enemy = create_sir_raul();
     int score = roll_dice(false); // step (219)
@@ -26,25 +26,25 @@ void fight_with_raul(Player &player)
     fight(enemy, player);
 }
 
-void fight_with_mortimer(Player &player)
+void fight_with_mortimer(Player& player)
 {
     Human enemy = create_sir_mortimer();
     fight(enemy, player);
 }
 
-void fight_with_viscount_elk(Player &player)
+void fight_with_viscount_elk(Player& player)
 {
     Human enemy = create_viscount_elk();
     fight(enemy, player);
 }
 
-void fight_with_rosht(Player &player)
+void fight_with_rosht(Player& player)
 {
     Beast enemy = create_rosht();
     fight(enemy, player);
 };
 
-void confession_to_monk(Player & player, int question_number)
+void confession_to_monk(Player& player, int question_number)
 {
     if (question_number == 1)
     {
@@ -58,7 +58,7 @@ void confession_to_monk(Player & player, int question_number)
     }
 }
 
-void check_health(Player & player, Inventory & inventory)
+void check_health(Player& player, Inventory& inventory)
 {
     if (inventory.get_food_amount() == 0)
     {
@@ -95,7 +95,7 @@ void check_health(Player & player, Inventory & inventory)
     }
 }
 
-void add_coin(Player &player, Inventory & inventory)
+void add_coin(Player& player, Inventory& inventory)
 {
     if (inventory.get_free_slots_amount() == 0)
     {
@@ -105,7 +105,7 @@ void add_coin(Player &player, Inventory & inventory)
     inventory.add_item(game_items.at(item::kDuchyCoinName));
 }
 
-void add_helmet(Player &player, Inventory & inventory, bool to_inventory)
+void add_helmet(Player& player, Inventory& inventory, bool to_inventory)
 {
     if (to_inventory)
     {

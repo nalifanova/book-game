@@ -54,7 +54,7 @@ int Inventory::get_free_slots_amount()
     {
         slots_amount += item.slots_amount;
     }
-    return backpack_size - slots_amount;
+    return m_backpack_size - slots_amount;
 }
 
 void Inventory::show_backpack_items()
@@ -63,8 +63,8 @@ void Inventory::show_backpack_items()
     {
         comment.text(i.name, ", ");
     }
-    comment.text("out of " + std::to_string(backpack_size) +
-                  " slots.");
+    comment.text("out of " + std::to_string(m_backpack_size) +
+                 " slots.");
 }
 
 void Inventory::remove_food()

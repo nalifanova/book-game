@@ -27,7 +27,7 @@ private:
     std::vector<Item> m_backpack = {};
     std::string m_weapon = "sword";
 //    Item m_head;
-    const int backpack_size = 7;
+    const int m_backpack_size = 7;
 };
 
 #endif //BOOK_GAME_INVENTORY_H

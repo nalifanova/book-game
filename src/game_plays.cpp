@@ -124,7 +124,7 @@ void l_path_from219_to375(Path& path, Player& player)
     fight_with_raul(player);
 }
 
-void l_path_from375_to177(Path& path, Player player)
+void l_path_from375_to177(Path& path, Player& player)
 {
     path.add_step(Step{"player wins", 46});
     path.add_step(Step{"to the Duke's residence", 109,
@@ -146,7 +146,7 @@ void l_path_from375_to177(Path& path, Player player)
     path.break_line();
 }
 
-void l_path_from309_to6(Path& path, Player player)
+void l_path_from309_to6(Path& path, Player& player)
 {
     path.show_title("continue:");
     path.add_step(Step{"kill a stranger", 309});

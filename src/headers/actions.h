@@ -10,7 +10,7 @@
  * Get values for input parameters
  * by rolled dice value
  */
-void create_attributes(int &dexterity, int &hp, int &charisma, int &luck);
+void create_attributes(int& dexterity, int& hp, int& charisma, int& luck);
 /**
  * Returns the sum of rolled two dices
  * Or the dice of one if twoDice == false
@@ -20,7 +20,7 @@ void create_attributes(int &dexterity, int &hp, int &charisma, int &luck);
 int roll_dice(bool two_dice=true);
 
 // Fight between Human/Beast and Player
-void fight(Creature &enemy, Player &player);
+void fight(Creature& enemy, Player& player);
 
 void comments_on(Player& player, Inventory& inventory, Path& path);
 

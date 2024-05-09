@@ -1,6 +1,7 @@
-#include <iostream>
 #ifndef BOOK_GAME_GLOBALS_H
 #define BOOK_GAME_GLOBALS_H
+
+#include <iostream>
 
 // Note: should be used for GUI window
 namespace globals {

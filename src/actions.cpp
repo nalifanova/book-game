@@ -46,7 +46,7 @@ void create_attributes(int& dexterity, int& hp, int& charisma, int& luck)
     }
 }
 
-void fight(Creature &enemy, Player &player)
+void fight(Creature& enemy, Player& player)
 {
     if (player.comment.is_active())
     {
