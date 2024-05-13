@@ -1,0 +1,5 @@
+Having bowed to each other, you unsheathe your swords. The Duke's chambers are somewhat cramped for such a duel, but no better place is offered to you.
+
+# SIR MORTIMER: Dexterity -9 Strength -12
+
+If you emerge victorious, then proceed to 534.

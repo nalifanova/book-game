@@ -1,0 +1,5 @@
+You confidently proceed down the left corridor, hoping it will lead somewhere. Suddenly, ahead among the stalactites, the most radiant smiles you've ever seen blossom. It seems like the cave itself welcomes your arrival. With joy? Well, there's no doubt about that when you notice that Rosh't (that's what this friendly creature is called) hasn't even finished chewing on your predecessor. You'll have to fight, but against whom and with what? The smiles draw closer, mouths salivating, while you strike blow after blow against this almost ethereal monster.
+
+#   ROSHT: Agility -10 Strength -12
+
+If you manage to defeat the creature, proceed to 516.

@@ -1,0 +1,2 @@
+When it's time to change clothes, subtract -48 from the paragraph number you're currently at. 
+And now, return to 112.

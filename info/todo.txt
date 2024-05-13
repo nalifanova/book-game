@@ -1,0 +1,33 @@
+That's the process of learning C++ during a Game development.
+-------------------------------------------------------------
+Topics:
+    - data types: int, string, float, array, vector, map
+    - structures like: struct and simple classes
+    - libraries: iostream, cctype, vector, map, algorithm
+    - read/write from/to file
+
+
+Questions:
+    Q1: What topic I'm working on?
+    Q2: What am I struggling with?
+    Q3: What am I gonna do?
+-------------------------------------------------------------
+Answers:
+    A1: CLI
+    A2: better look for GUI
+    A3: search for advice or a library to use
+
+
+# TODO: my questions from perspective of a py dev
+# open questions:
+- use the proper way to write classes
+- how to work with db, is there a standard lib or an external?
+- connect to the database
+    (https://github.com/jtv/libpqxx)
+    (https://pqxx.org/libpqxx/)
+- classes can be inherited as private! constructor can be virtual! how mro works
+  here?
+- virtual functions/methods: https://www.bogotobogo.com/cplusplus/virtualfunctions.php
+- work with for-loops (why do we need to create iterators there? what benefits?)
+- GUI is a nightmare, need to choose the lib with a nice documentation/community
+- x ^= true; - toggle bool value (read about boolean operations)

@@ -1,0 +1,1 @@
+As you approach, you notice that the roses are planted in a specific order. Before you are four flower beds, each of which contains flowers of only one color. Do you want to pick a rose – black (213), tea (523), white (615), or crimson (312) – or will you leave through one of the alleys (446)?
