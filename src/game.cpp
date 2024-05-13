@@ -30,19 +30,23 @@ Game::Game()
     init_objects();
     this->run();
 }
+
 Game::~Game() = default;
 
 bool Game::is_number_available(int number)
 {
-    return (std::find(m_options.begin(), m_options.end(), number)
-            != m_options.end());
+    return (
+        std::find(m_options.begin(), m_options.end(), number)
+        != m_options.end()
+    );
 }
 
 void Game::remove_option(int number)
 {
-    m_options.erase(std::remove(m_options.begin(),
-                                m_options.end(), number),
-                    m_options.end());
+    m_options.erase(
+    std::remove(m_options.begin(), m_options.end(), number),
+    m_options.end()
+    );
 }
 
 void Game::show_available_options()
@@ -80,16 +84,17 @@ void Game::init_objects()
 {
     std::string player_name;
     get_player_input(player_name, "Enter your name Player:");
-    log::ok("Welcome to " + msg::kBookName + ", " + player_name +
-            "!\nYou have: a sword, a backpack and food for three days. "
-            "Enter 1 to continue.");
+    log::ok(
+        "Welcome to " + msg::kBookName + ", " + player_name +
+        "!\nYou have: a sword, a backpack and food for three days. "
+        "Enter 1 to continue."
+    );
     // player = new Player("Nat", 12, 12, 12, 12); // DEBUG
     m_player = new Player(create_me(player_name));
     m_inventory = new Inventory();
     m_path = new Path();
     comments_on(*m_player, *m_inventory, *m_path);
 //    inventory->add_item(game_items.at(item::kGuidingThreadName));
-
 }
 
 void Game::run()
@@ -102,9 +107,10 @@ void Game::run()
 
     while (input != "quit")
     {
-        get_player_input(input,
-                         "Enter number or " + available_command_list() +
-                         ":");
+        get_player_input(
+            input,
+            "Enter number or " + available_command_list() + ":"
+        );
         if (!is_number(input))
         {
             run_command(input);
@@ -128,16 +134,21 @@ void Game::run()
         Item *item = m_inventory->get_item(optional_item);
         if (item) m_options.push_back(item->id + stoi(input));
 
-        m_path->add_step({"step", stoi(input),
-                          Path::get_step_type_id(special_symbol,
-                                               m_options.size())});
+        m_path->add_step({
+            "step",
+            stoi(input),
+            Path::get_step_type_id(
+                special_symbol,
+                m_options.size()
+            )
+        });
         special_symbol = ' '; // nullify special symbol
         show_available_options();
     }
 }
 
-void Game::run_command(std::string& input) {
-
+void Game::run_command(std::string& input)
+{
     switch (commands[input])
     {
         case cli::backpack:
@@ -147,16 +158,22 @@ void Game::run_command(std::string& input) {
             log::msg(m_player->get_name() + " has a sword.");
             break;
         case cli::food:
-            log::msg(m_player->get_name() + "'s amount of food is " +
-                     std::to_string(m_inventory->get_food_amount()) + ".");
+            log::msg(
+                m_player->get_name() + "'s amount of food is " +
+                std::to_string(m_inventory->get_food_amount()) + "."
+            );
             break;
         case cli::health:
-            log::msg(m_player->get_name() + "'s health (HP) is " +
-                     std::to_string(m_player->get_hp()) + ".");
+            log::msg(
+                m_player->get_name() + "'s health (HP) is " +
+                std::to_string(m_player->get_hp()) + "."
+            );
             break;
         case cli::quit:
-            log::warning("You exit the game, " + m_player->get_name() +
-                         ". Bye-bye!");
+            log::warning(
+                "You exit the game, " + m_player->get_name() +
+                ". Bye-bye!"
+            );
             break;
         case cli::path:
             m_path->show();

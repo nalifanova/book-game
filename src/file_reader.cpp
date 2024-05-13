@@ -12,7 +12,7 @@ std::string create_file_path(const std::string& paragraph_number)
 {
     std::filesystem::path cwd = std::filesystem::current_path();
     std::filesystem::path paragraph_dir = cwd.parent_path() /
-            "src" / "data" / "paragraphs" ;
+            "data" / "paragraphs" ;
 
     std::string filename = paragraph_dir.string() +
                            "/" + paragraph_number + ".txt";
@@ -38,8 +38,12 @@ void get_string_from_file(std::string& player_number, std::string& content)
     file.close();
 }
 
-void read_content(std::string& content, std::vector<int>& options,
-                  std::string& optional_item, char& special_symbol)
+void read_content(
+    std::string& content,
+    std::vector<int>& options,
+    std::string& optional_item,
+    char& special_symbol
+)
 {
     int char_counter = 1;
     std::string str_number;
@@ -90,7 +94,6 @@ void read_content(std::string& content, std::vector<int>& options,
         char_counter++;
     }
 }
-
 
 // Might be deprecated
 std::string open_file(std::string& filename)

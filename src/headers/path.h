@@ -26,18 +26,23 @@ class Path
 {
 public:
     Path();
+
     ~Path();
 
     Comment comment = Comment();
 
     void add_step(const Step& step);
+
     void show(const int& from_step_id = 0, const int& to_step_id = 0);
+
     int get_index(const int& step_id);
 
     void show_title(const std::string& title = "Path:") const;
+
     void break_line() const;
 
     static std::string get_type_name(StepType type);
+
     static StepType get_step_type_id(char& special_symbol, size_t length = 0);
 
 protected:

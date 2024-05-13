@@ -26,5 +26,4 @@ void comments_on(Player& player, Inventory& inventory, Path& path);
 
 bool is_game_over(Player& player);
 
-
 #endif //BOOK_GAME_ACTIONS_H

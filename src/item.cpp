@@ -3,8 +3,12 @@
 #include <functional>
 #include <utility>
 
-Item::Item(std::string name, int id, int slots_amount,
-           std::function<int(int, int)> sign)
+Item::Item(
+    std::string name,
+    int id,
+    int slots_amount,
+    std::function<int(int, int)> sign
+)
 {
     this->name = std::move(name);
     this->id = id;

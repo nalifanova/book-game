@@ -74,20 +74,26 @@ void fight(Creature& enemy, Player& player)
         else if (enemy_hit > player_hit)
         {
             player.receive_damage();
-            player.comment.text("your HP -2 (" +
-                                 std::to_string(player.get_hp()) + ")");
+            player.comment.text(
+                "your HP -2 (" +
+                std::to_string(player.get_hp()) + ")"
+            );
         }
         else
         {
             enemy.receive_damage();
-            player.comment.text("enemy's HP -2 (" +
-                                 std::to_string(enemy.get_hp()) + ")");
+            player.comment.text(
+                "enemy's HP -2 (" +
+                std::to_string(enemy.get_hp()) + ")"
+            );
         }
     }
     if (player.comment.is_active())
     {
-        log::warning("My HP after fight is " +
-                      std::to_string(player.get_hp()));
+        log::warning(
+            "My HP after fight is " +
+            std::to_string(player.get_hp())
+        );
         log::msg(std::string(row::kUnderlineLength, '-'));
     }
 }
@@ -99,8 +105,10 @@ void comments_on(Player& player, Inventory& inventory, Path& path)
     path.comment.turn_messages_on();
 }
 
-bool is_game_over(Player& player) {
-    if (!player.is_alive()) {
+bool is_game_over(Player& player)
+{
+    if (!player.is_alive())
+    {
         log::error("You are dead. Game over!");
         return true;
     }

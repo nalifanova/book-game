@@ -28,8 +28,7 @@ void Inventory::remove_item(const std::string& item_name)
         if (m_backpack.at(i).name == item_name)
         {
             m_backpack.erase(m_backpack.begin() + i);
-            comment.message("inventory-", true,
-                            item_name);
+            comment.message("inventory-", true, item_name);
             return;
         }
     }
@@ -63,8 +62,9 @@ void Inventory::show_backpack_items()
     {
         comment.text(i.name, ", ");
     }
-    comment.text("out of " + std::to_string(m_backpack_size) +
-                 " slots.");
+    comment.text(
+        "out of " + std::to_string(m_backpack_size) + " slots."
+    );
 }
 
 void Inventory::remove_food()

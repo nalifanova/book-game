@@ -8,18 +8,27 @@
 #include "globals.h"
 #include "item.h"
 
-class Inventory {
+class Inventory
+{
 public:
     Inventory();
+
     ~Inventory();
+
     Comment comment = Comment();
 
     void remove_item(const std::string& item_name);
+
     Item* get_item(const std::string& item_name);
+
     void add_item(const Item& item);
+
     int get_free_slots_amount();
+
     void show_backpack_items();
+
     void remove_food();
+
     int get_food_amount();
 //    void replace_head_cover(const Item& item);
 

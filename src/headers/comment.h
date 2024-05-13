@@ -12,9 +12,11 @@ class Comment
 {
 public:
     Comment();
+
     ~Comment();
 
     void turn_messages_on();
+
     void turn_messages_off();
 
     /*
@@ -23,15 +25,24 @@ public:
      * Usage Comment::warning("Hello there", " ");
      */
     void text(const std::string& message, const std::string& sep = "\n") const;
-    void warning(const std::string& message,
-                 const std::string& sep = "\n") const;
+
+    void warning(
+        const std::string& message,
+        const std::string& sep = "\n"
+    ) const;
+
     /*
      * Usage Comment::message("lucky", false);
      * Output: "You are NOT lucky!"
      */
     void message(const std::string& message, bool type) const;
-    void message(const std::string& message, bool type,
-                 const std::string& item_name) const;
+
+    void message(
+        const std::string& message,
+        bool type,
+        const std::string& item_name
+    ) const;
+
     [[nodiscard]] bool is_active() const;
 
 private:

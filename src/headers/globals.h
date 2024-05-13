@@ -16,7 +16,7 @@ namespace row {
 
 namespace msg {
     const std::string kTitle = "Book Game:";
-    const std::string kBookName = "Maze of concealed death";
+    const std::string kBookName = "Maze of Concealed Death";
 }
 
 namespace mob {
@@ -28,19 +28,19 @@ namespace mob {
 
 namespace item {
     // Note: names in Russian because they're taken from paragraphs
-    const std::string kFoodName = "Еда"; // (0)
-    const std::string kGuidingThreadName = "Путеводная нить"; // (+40)
-    const std::string kFishBoneName = "Рыбная кость"; // (-49)
-    const std::string kHandkerchiefName = "Расшитый странными узорами "
-                                          "белоснежный платок"; // (+194)
-    const std::string kSmallMirrorName = "Зеркальце"; // (+59)
-    const std::string kBarbarianOutfitName = "Шкуры и меховая шапочка "
-                                             "варвара"; // (+50)
-    const std::string kMonkOutfitName = "Монашескую ряса"; // (+92)
-    const std::string kKnightOutfitName = "Oдежды рыцаря"; // (+377)
-    const std::string kSailorsOutfitName = "Oдежда моряка"; // (-77)
-    const std::string kDuchyCoinName = "Монета герцогства"; // (+28)"
+    const std::string kFoodName = "Food"; // (0)
+    const std::string kGuidingThreadName = "Guiding Thread"; // (+40)
+    const std::string kFishBoneName = "Fish Bone"; // (-49)
+    const std::string kHandkerchiefName = "White Handkerchief"; // (+194)
+    const std::string kSmallMirrorName = "Mirror"; // (+59)
+    const std::string kBarbarianOutfitName = "The skins and fur cap of a "
+                                             "barbarian"; // (+50)
+    const std::string kMonkOutfitName = "A monk's robe"; // (+92)
+    const std::string kKnightOutfitName = "Knight's attire"; // (+377)
+    const std::string kMerchantOutfitName = "A merchant's outfit"; // (-48)
+    const std::string kSailorsOutfitName = "A sailor's attire"; // (-77)
+    const std::string kDuchyCoinName = "Duchy coin"; // (+28)"
     // "Helmet (+26)" in backpack or "Helmet(+12)" on head
-    const std::string kOldHelmetName = "Старый шлем";
+    const std::string kKnightsHelmetName = "Knight's helmet";
 }
 #endif //BOOK_GAME_GLOBALS_H

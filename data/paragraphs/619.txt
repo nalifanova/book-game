@@ -1,0 +1,5 @@
+Muttering exquisite curses, Sir Raul rises to his feet. According to the laws of the duchy, if one knight has been dismounted, the other must hasten to join him. The duel continues with swords.
+
+#   SIR RAUL: Agility -10 Strength -8
+
+If you emerge victorious, proceed to 46.

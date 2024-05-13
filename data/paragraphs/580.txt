@@ -1,0 +1,2 @@
+Literally, in a few steps, the path forks. The wider corridor goes to the left, while the narrower one continues straight ahead.
+Where will you go: straight ahead (204) or to the left (12)?

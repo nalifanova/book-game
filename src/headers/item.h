@@ -7,9 +7,13 @@
 class Item
 {
 public:
-    Item(std::string name, int id, int slots_amount = 1,
+    Item(
+        std::string name,
+        int id,
+        int slots_amount = 1,
          std::function<int(int, int)> sign = std::plus<int>()
     );
+
     ~Item();
 
     // Returns a value of a next possible step

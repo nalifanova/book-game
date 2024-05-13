@@ -1,4 +1,4 @@
-# book-game
+# Book Game "Maze of Concealed Death"
 
 <div align="center">
   
@@ -10,21 +10,44 @@
 </div>
 
 ## Idea
-I started learning C++ on April 14, 2024. To make the learning process more 
-enjoyable, I decided to create a game based on a book that was popular in the 
-90s. The book represents a kind of RPG game with limited skills, characteristics, 
-combat, etc., but it is still enjoyable to play. The book is in Russian, but I 
-might translate it to English once I start learning how to use translation for 
-projects in C++.
+I started learning C++ on March 14, 2024. My guide was a book "Programming 
+Abstractions in C++ by Eric S. Roberts Stanford University Spring Quarter 2012".
+It took me a month to proceed and get acquainted with very basics. In a month,
+on April 14, to make the learning process more enjoyable, I decided to create a 
+game based on a book that was popular in the 90s. 
+
+The book represents a kind of RPG game with limited skills, characteristics, 
+combat, etc., but it is still enjoyable to play. The book is in Russian, but it
+has been translated to English with great help of ChatGPT 3.5.
+
+### Book itself
+You can familiarize yourself with the book by following the link
+["Лабиринт затаившейся смерти"](https://avidreaders.ru/read-book/labirint-zataivsheysya-smerti-kniga-igra.html).
+Just keep in mind that the book is in Russian.
+When I was a child, I loved to read/play books by Dmitry Braslavsky, like:
+- Black Castle Dungeons
+- Captain Shelton's Mystery
+- Maze of Concealed Death
+- etc.
 
 ## Description
 Game Description: Simply run the `main.cpp` file and enjoy the experience.
 
-P.S.: I'll provide additional information about the book used and its author.
-Furthermore, more paragraphs will be added in due time (it's not going to be 
+P.S.: More paragraphs will be added in due time (it's not going to be 
 very soon though).
 
-## How-to
+## How-to 
+
+### Play the game
+
+The intro for the game can be found here - [Game Intro](GAMEINTRO.md).
+
+If you are interested in [Game Rules](GAMERULES) and want to find out how to 
+play the book game, go for it. Just keep in mind that these rules are for the 
+pure book game (text of which you can find in [paragraphs](data/paragraphs) 
+folder). 
+The project automated a huge part of the rules, thus you can just skip them.
+
 
 ## Dev Notes
 I'm using CLion as my IDE, and I endeavor to adhere to its provided guidelines, 

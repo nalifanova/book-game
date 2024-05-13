@@ -20,6 +20,7 @@ std::map<std::string, std::string> comment_messages = {
 
 // public methods
 Comment::Comment() = default;
+
 Comment::~Comment() = default;
 
 void Comment::turn_messages_off()
@@ -61,8 +62,11 @@ void Comment::message(const std::string& message, bool type) const
     }
 }
 
-void Comment::message(const std::string& message, bool type,
-                      const std::string& item_name) const
+void Comment::message(
+    const std::string& message,
+    bool type,
+    const std::string& item_name
+) const
 {
     if (!m_show_messages) return;
 

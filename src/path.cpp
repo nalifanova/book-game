@@ -15,8 +15,9 @@ void Path::add_step(const Step& step)
 
 int Path::get_index(const int& step_id)
 {
-    auto it = std::find(m_step_ids.begin(),
-                                      m_step_ids.end(), step_id);
+    auto it = std::find(
+        m_step_ids.begin(), m_step_ids.end(), step_id
+    );
     if (it != m_step_ids.end())
     {
         return (int) std::distance(m_step_ids.begin(), it);
@@ -47,10 +48,9 @@ void Path::show(const int& from_step_id, const int& to_step_id)
     {
         step = m_steps.at(m_step_ids[i]);
         comment.text(
-                step.name +
-                "(" + std::to_string(step.id) + ")" +
-                        get_type_name(step.type),
-                ((counter) % 5 == 0 ? "->\n" : "->")
+            step.name + "(" + std::to_string(step.id) + ")" +
+            get_type_name(step.type),
+            ((counter) % 5 == 0 ? "->\n" : "->")
         );
         counter++;
     }
@@ -91,6 +91,6 @@ void Path::check_from_to(int& from_index, int& to_index)
 {
     size_t pathLength = m_step_ids.size();
     to_index = (to_index > 0 && to_index < pathLength)
-            ? to_index + 1 : (int) pathLength;
+        ? to_index + 1 : (int) pathLength;
     from_index = (from_index >= 0 && from_index < pathLength) ? from_index : 0;
 }

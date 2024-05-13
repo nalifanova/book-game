@@ -58,6 +58,7 @@ Human::Human(std::string name, int dexterity, int hp)
     m_hp = hp;
     m_initial_hp = hp;
 }
+
 Human::~Human()= default;
 
 // ------------------------
@@ -68,11 +69,17 @@ Beast::Beast(std::string name, int dexterity, int hp)
     m_hp = hp;
     m_initial_hp = hp;
 }
+
 Beast::~Beast()= default;
 
 // ------------------------
-Player::Player(std::string name, int dexterity, int hp, int& charisma,
-               int& luck)
+Player::Player(
+    std::string name,
+    int dexterity,
+    int hp,
+    int& charisma,
+    int& luck
+)
 {
     m_name = std::move(name);
     m_dexterity = dexterity;

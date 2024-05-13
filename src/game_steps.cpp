@@ -14,8 +14,9 @@ void fight_with_raul(Player& player)
     {
         case 1: case 2: case 3: case 5: // (447) - not lucky
             player.lose_hp(4);
-            player.comment.warning("Sir Raul's spear hits you! Your "
-                                   "HP is falling [-4].");
+            player.comment.warning(
+                "Sir Raul's spear hits you! Your HP is falling [-4]."
+            );
             break;
         default: // (118) - 4, 6: lucky
             player.comment.text("Sir Raul's spear misses the target.");
@@ -115,7 +116,7 @@ void add_helmet(Player& player, Inventory& inventory, bool to_inventory)
             inventory.remove_food();
         }
         // "Helmet (+26)"
-        inventory.add_item(Item(item::kOldHelmetName, 26));
+        inventory.add_item(Item(item::kKnightsHelmetName, 26));
     }
 //    else
 //    {
