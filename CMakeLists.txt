@@ -1,7 +1,21 @@
 cmake_minimum_required(VERSION 3.28)
 project(book_game)
 
+set(BOOK_GAME_VERSION_MAJOR 0)
+set(BOOK_GAME_VERSION_MINOR 1)
+
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+if (WIN32)
+    set(CPP_VERSION -std=gnu++${CMAKE_CXX_STANDARD})
+elseif (APPLE)
+    set(CPP_VERSION -std=c++${CMAKE_CXX_STANDARD})
+else ()
+    set(CPP_VERSION -std=c++${CMAKE_CXX_STANDARD})
+endif ()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-reorder ${CPP_VERSION}")
 
 add_executable(book_game
         src/main.cpp

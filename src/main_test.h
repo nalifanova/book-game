@@ -17,10 +17,17 @@
 #include "headers/item.h"
 
 // Macros e.g.: IS_TRUE(fn_name(10));
-#define IS_TRUE(x) { if (!(x)) std::cout << __FUNCTION__ << " failed on line " << __LINE__ << std::endl; }
-#define test_line { std::cout << "\033[1;31m- " << __FUNCTION__ << " [" << __LINE__ << "] -\033[0m" << std::endl; };
+#define IS_TRUE(x) {\
+if (!(x)) std::cout << __FUNCTION__ << " failed on line " <<\
+__LINE__ << std::endl;\
+}
+// Macros should be implemented in one line, but! there's a trick with `\`
+#define test_line {\
+std::cout << "\033[1;31m- " << __FUNCTION__ << " [" <<\
+__LINE__ << "] -\033[0m" << std::endl;\
+};
 
-void test_comments_text()
+inline void test_comments_text()
 {
     test_line;
     Comment comment = Comment();
@@ -31,12 +38,12 @@ void test_comments_text()
         comment.message("reaction", i);
     }
 
-    for (auto el: comment_messages) {
-        log::info(el.first + " " + el.second);
+    for (const auto& [fst, snd]: comment_messages) {
+        log::info(fst + std::string(" ").append(snd));
     }
 }
 
-void test_logs()
+inline void test_logs()
 {
     test_line;
     std::string msg = "Test world!";
@@ -49,7 +56,7 @@ void test_logs()
     log::debug(msg);
 }
 
-void test_human()
+inline void test_human()
 {
     test_line;
     int dexterity = 16;
@@ -70,7 +77,7 @@ void test_human()
     assert(human.get_hp() == 0);
 }
 
-void test_beast()
+inline void test_beast()
 {
     test_line;
     int dexterity = 10;
@@ -91,7 +98,7 @@ void test_beast()
     assert(beast.get_hp() == 0);
 }
 
-void test_player()
+inline void test_player()
 {
     test_line;
     int dexterity = 10;
@@ -100,7 +107,9 @@ void test_player()
     int luck      = 7;
     std::string name = "Player Name";
 
-    Player player = Player(name, dexterity, strength, charisma, luck);
+    Player player = Player(
+        name, dexterity, strength, charisma, luck
+    );
     assert(player.get_name() == name);
     assert(player.get_dexterity() == dexterity);
     assert(player.get_hp() == strength);
@@ -114,7 +123,7 @@ void test_player()
     assert(player.get_hp() == 0);
 }
 
-void test_player_characteristics()
+inline void test_player_characteristics()
 {
     test_line;
     int dexterity = 10;
@@ -124,7 +133,9 @@ void test_player_characteristics()
     int reaction  = 5;
     std::string name = "Player Name";
 
-    Player player = Player(name, dexterity, strength, charisma, luck);
+    Player player = Player(
+        name, dexterity, strength, charisma, luck
+    );
     //player.comment.turnMessagesOn();
 
     assert(player.is_lucky(luck));
@@ -146,7 +157,7 @@ void test_player_characteristics()
     assert(player.get_reaction() == reaction);
 }
 
-void test_inventory()
+inline void test_inventory()
 {
     test_line;
     Item fishBone = Item("Fish Bone", 1);
@@ -181,29 +192,31 @@ void test_inventory()
     assert(inventory.get_free_slots_amount() == 1);
 }
 
-void test_fight()
+inline void test_fight()
 {
     test_line;
     Human sirRalf = Human("Sir Ralf", 12, 8);
     int charisma = 7;
     int luck = 7;
-    Player player = Player("Peter", 12, 12, charisma, luck);
+    Player player = Player(
+        "Peter", 12, 12, charisma, luck
+    );
 //    player.comment.turnMessagesOn();
     fight(sirRalf, player);
 }
 
-void test_path()
+inline void test_path()
 {
     test_line;
     Path path = Path();
 
-    path.add_step({"Ворота лабиринта", 1, a_condition});
-    path.add_step(Step{"иду налево", 486, a_condition});
-    path.add_step(Step{"обращаюсь к магии", 114, a_condition});
-    path.add_step(Step{"слово Вера", 77});
-    path.add_step(Step{"магия подействовала", 183, a_condition});
-    path.add_step(Step{"иду к розам", 2, a_condition});
-    path.add_step(Step{"срываю белую роза", 615});
+    path.add_step({"Maze Gates", 1, a_condition});
+    path.add_step(Step{"left", 486, a_condition});
+    path.add_step(Step{"to magic", 114, a_condition});
+    path.add_step(Step{"Belief word", 77});
+    path.add_step(Step{"magic works", 183, a_condition});
+    path.add_step(Step{"go to roses", 2, a_condition});
+    path.add_step(Step{"pick up white rose", 615});
 
     path.comment.turn_messages_on();
     path.show();
@@ -217,13 +230,15 @@ void test_path()
     path.break_line();
 }
 
-void test_path_separator()
+inline void test_path_separator()
 {
     test_line;
     Path path = Path();
 
     for (int i = 0; i < 20; i++)
-        path.add_step({"step" + std::to_string(i + 1), i + 20});
+        path.add_step(
+            {"step" + std::to_string(i + 1), i + 20}
+        );
     path.comment.turn_messages_on();
 
     path.show(22, 32);
@@ -232,16 +247,20 @@ void test_path_separator()
     path.break_line();
 }
 
-void test_items()
+inline void test_items()
 {
     test_line;
-    Item ring = Item("Cool ring", 12, 1, std::plus<int>());
-    Item helmet = Item("Steel helmet", 22, 1, std::minus<int>());
+    Item ring = Item(
+        "Cool ring", 12, 1, std::plus<int>()
+    );
+    Item helmet = Item(
+        "Steel helmet", 22, 1, std::minus<int>()
+    );
     assert(14 == ring.alternative_step(2));
     assert(20 == helmet.alternative_step(42));
 }
 
-void run_tests()
+inline void run_tests()
 {
 //    test_comments_text();
 //    test_logs();
