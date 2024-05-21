@@ -15,7 +15,7 @@ else ()
     set(CPP_VERSION -std=c++${CMAKE_CXX_STANDARD})
 endif ()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-reorder ${CPP_VERSION}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-reorder")
 
 add_executable(book_game
         src/main.cpp

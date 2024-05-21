@@ -49,10 +49,15 @@ void Game::remove_option(int number)
     );
 }
 
-void Game::show_available_options()
+void Game::show_available_options() const
 {
+    if (m_options.empty())
+    {
+        log::warning("\nNo available options, enter `path`");
+        return;
+    }
     log::warning("\nAvailable options:", " ");
-    for (auto el : m_options)
+    for (const auto el : m_options)
         std::cout << '[' << el << "] ";
     std::cout << std::endl;
 }
@@ -60,9 +65,9 @@ void Game::show_available_options()
 std::string Game::available_command_list()
 {
     std::string list;
-    for (const auto& el: commands)
+    for (const auto& [fst, snd]: commands)
     {
-        list += "[" + el.first + "]";
+        list += "[" + fst + "]";
     }
     return list;
 }
@@ -147,7 +152,7 @@ void Game::run()
     }
 }
 
-void Game::run_command(std::string& input)
+void Game::run_command(const std::string& input) const
 {
     switch (commands[input])
     {

@@ -50,7 +50,11 @@ void Path::show(const int& from_step_id, const int& to_step_id)
         comment.text(
             step.name + "(" + std::to_string(step.id) + ")" +
             get_type_name(step.type),
-            ((counter) % 5 == 0 ? "->\n" : "->")
+            (
+                (step.type == StepType::a_final)
+                ? "!\n"
+                : ((counter) % 5 == 0 ? "->\n" : "->")
+            )
         );
         counter++;
     }

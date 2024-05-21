@@ -17,13 +17,13 @@ protected:
 
     void init_objects();
 
-    void run_command(std::string& input);
+    void run_command(const std::string& input) const;
 
     bool is_number_available(int number);
 
     void remove_option(int number);
 
-    void show_available_options();
+    void show_available_options() const;
 
     static std::string available_command_list();
 
