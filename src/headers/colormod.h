@@ -30,30 +30,35 @@
 
 #include <ostream>
 
-namespace Color {
-    enum Code {
-        FgRed      = 31,
-        FgGreen    = 32,
-        FgYellow   = 33,
-        FgBlue     = 34,
-        FgDefault  = 39,
-        BgRed      = 41,
-        BgGreen    = 42,
-        BgYellow   = 43,
-        BgBlue     = 44,
-        BgDefault  = 49
-    };
-    class Modifier {
-        Code code;
-    public:
-        Modifier(Code pCode) : code(pCode) {}
+namespace Color
+{
+enum Code
+{
+    FgRed = 31,
+    FgGreen = 32,
+    FgYellow = 33,
+    FgBlue = 34,
+    FgDefault = 39,
+    BgRed = 41,
+    BgGreen = 42,
+    BgYellow = 43,
+    BgBlue = 44,
+    BgDefault = 49
+};
 
-        friend std::ostream&
-        operator<<(std::ostream& os, const Modifier& mod)
-        {
-            return os << "\033[" << mod.code << "m";
-        }
-    };
+class Modifier
+{
+    Code code;
+
+public:
+    Modifier(Code pCode) : code(pCode) {}
+
+    friend std::ostream&
+    operator<<(std::ostream& os, const Modifier& mod)
+    {
+        return os << "\033[" << mod.code << "m";
+    }
+};
 }
 
 #endif //BOOK_GAME_COLORMOD_H

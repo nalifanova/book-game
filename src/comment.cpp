@@ -11,7 +11,7 @@ std::map<std::string, std::string> comment_messages = {
     {"reaction1", "Your reaction helped you."},
 
     {"inventory0", "You have no space in your backpack. Remove "
-                   "something first."},
+                      "something first."},
     {"inventory-0", "is not in your backpack. You don't have it."},
     {"inventory-1", "was removed from your backpack."},
     {"inventory+1", "was successfully added to your backpack."}

@@ -40,9 +40,9 @@ private:
     std::vector<int> m_history = {};
 
     //
-    Player *m_player = nullptr;
-    Inventory *m_inventory = nullptr;
-    Path *m_path = nullptr;
+    Player* m_player = nullptr;
+    Inventory* m_inventory = nullptr;
+    Path* m_path = nullptr;
 };
 
 #endif //BOOK_GAME_GAME_H

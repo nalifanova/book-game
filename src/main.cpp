@@ -4,13 +4,14 @@
 #include "headers/game_plays.h"
 
 
-int main() {
+int main()
+{
     // Different Scenarios
-//    game_play_one();
+    //    game_play_one();
     // Death Scenarios
-//    game_play_death3();
+    //    game_play_death3();
     // Tests
-//    run_tests();
+    //    run_tests();
     // Final version to play the game
     Game game;
 

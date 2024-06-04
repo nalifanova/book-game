@@ -11,8 +11,8 @@ public:
         std::string name,
         int id,
         int slots_amount = 1,
-         std::function<int(int, int)> sign = std::plus<int>()
-    );
+        std::function<int(int, int)> sign = std::plus<int>()
+        );
 
     ~Item();
 

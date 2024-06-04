@@ -17,7 +17,7 @@ void create_attributes(int& dexterity, int& hp, int& charisma, int& luck);
  * @param two_dice bool
  * @return int
  */
-int roll_dice(bool two_dice=true);
+int roll_dice(bool two_dice = true);
 
 // Fight between Human/Beast and Player
 void fight(Creature& enemy, Player& player);

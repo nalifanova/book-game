@@ -14,10 +14,7 @@ void log::msg(
     const std::string& sep,
     Color::Modifier open,
     Color::Modifier close
-)
-{
-    std::cout << open << message  << sep << close;
-}
+    ) { std::cout << open << message << sep << close; }
 
 void log::info(const std::string& message, const std::string& sep)
 {

@@ -29,7 +29,7 @@ public:
     void warning(
         const std::string& message,
         const std::string& sep = "\n"
-    ) const;
+        ) const;
 
     /*
      * Usage Comment::message("lucky", false);
@@ -41,7 +41,7 @@ public:
         const std::string& message,
         bool type,
         const std::string& item_name
-    ) const;
+        ) const;
 
     [[nodiscard]] bool is_active() const;
 

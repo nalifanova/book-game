@@ -3,51 +3,24 @@
 #include <utility>
 
 // public methods
-std::string Creature::get_name()
-{
-    return m_name;
-}
+std::string Creature::get_name() { return m_name; }
 
-int Creature::get_dexterity() const
-{
-    return m_dexterity;
-}
+int Creature::get_dexterity() const { return m_dexterity; }
 
-int Creature::get_hp() const
-{
-    return m_hp;
-}
+int Creature::get_hp() const { return m_hp; }
 
-bool Creature::is_alive() const
-{
-    return m_hp > 0;
-}
+bool Creature::is_alive() const { return m_hp > 0; }
 
-int Creature::hit(int dice) const
-{
-    return m_dexterity + dice;
-}
+int Creature::hit(int dice) const { return m_dexterity + dice; }
 
-void Creature::receive_damage()
-{
-    lose_hp(kStrengthLoss);
-}
+void Creature::receive_damage() { lose_hp(k_strength_loss); }
 
-void Creature::lose_hp(int hit_points)
-{
-    if (m_hp > 0)
-    {
-        m_hp -= hit_points;
-    }
-}
+void Creature::lose_hp(int hit_points) { if (m_hp > 0) { m_hp -= hit_points; } }
 
 void Creature::gain_hp(int hit_points)
 {
     m_hp += hit_points;
-    if (m_hp > m_initial_hp)
-    {
-        m_hp = m_initial_hp;
-    }
+    if (m_hp > m_initial_hp) { m_hp = m_initial_hp; }
 }
 
 // ------------------------
@@ -59,7 +32,7 @@ Human::Human(std::string name, int dexterity, int hp)
     m_initial_hp = hp;
 }
 
-Human::~Human()= default;
+Human::~Human() = default;
 
 // ------------------------
 Beast::Beast(std::string name, int dexterity, int hp)
@@ -70,7 +43,7 @@ Beast::Beast(std::string name, int dexterity, int hp)
     m_initial_hp = hp;
 }
 
-Beast::~Beast()= default;
+Beast::~Beast() = default;
 
 // ------------------------
 Player::Player(
@@ -79,7 +52,7 @@ Player::Player(
     int hp,
     int& charisma,
     int& luck
-)
+    )
 {
     m_name = std::move(name);
     m_dexterity = dexterity;
@@ -88,33 +61,19 @@ Player::Player(
     m_charisma = charisma;
     m_luck = luck;
 }
-Player::~Player()= default;
+
+Player::~Player() = default;
 
 // public methods
-int Player::get_charisma() const
-{
-    return m_charisma;
-}
+int Player::get_charisma() const { return m_charisma; }
 
-int Player::get_luck() const
-{
-    return m_luck;
-}
+int Player::get_luck() const { return m_luck; }
 
-int Player::get_reaction() const
-{
-    return m_reaction;
-}
+int Player::get_reaction() const { return m_reaction; }
 
-bool Player::is_hungry()
-{
-    return ((m_initial_hp - m_hp) >= kFoodValue);
-}
+bool Player::is_hungry() { return ((m_initial_hp - m_hp) >= k_food_value); }
 
-void Player::eat(int amount)
-{
-    gain_hp(kFoodValue * amount);
-}
+void Player::eat(int amount) { gain_hp(k_food_value * amount); }
 
 bool Player::is_lucky(int dice)
 {
@@ -141,12 +100,6 @@ bool Player::is_fast(int dice)
 }
 
 // protected methods
-void Player::lose_charisma(int points)
-{
-    m_charisma -= points;
-}
+void Player::lose_charisma(int points) { m_charisma -= points; }
 
-void Player::gain_charisma(int points)
-{
-    m_charisma += points;
-}
+void Player::gain_charisma(int points) { m_charisma += points; }

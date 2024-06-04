@@ -12,7 +12,7 @@ std::string create_file_path(const std::string& paragraph_number)
 {
     std::filesystem::path cwd = std::filesystem::current_path();
     std::filesystem::path paragraph_dir = cwd.parent_path() /
-            "data" / "paragraphs" ;
+                                          "data" / "paragraphs";
 
     std::string filename = paragraph_dir.string() +
                            "/" + paragraph_number + ".txt";
@@ -27,8 +27,9 @@ void get_string_from_file(std::string& player_number, std::string& content)
 
     if (file.fail()) {
         // throw std::runtime_error("Failed to open file");
-        log::error("Looks like the file " + file_path +
-                   " cannot be read/found.");
+        log::error(
+            "Looks like the file " + file_path +
+            " cannot be read/found.");
         file.clear();
     }
 
@@ -43,40 +44,31 @@ void read_content(
     std::vector<int>& options,
     std::string& optional_item,
     char& special_symbol
-)
+    )
 {
     int char_counter = 1;
     std::string str_number;
     bool break_line = false;
     bool has_needed_item = false;
 
-    for(char& ch : content)
-    {
+    for (char& ch: content) {
         if (ch == '\n') char_counter = 1;
         else if (ch == '#' || ch == '%' || ch == '^') special_symbol = ch;
         else if (ch == '`') has_needed_item ^= true; // toggle value
 
-
-        if (char_counter % row::kCliOutputLineWidth == 0) break_line = true;
+        if (char_counter % row::k_cli_output_line_width == 0) break_line = true;
         if (ch == ' ' && break_line) // break the line
         {
             std::cout << std::endl;
             break_line = false;
             char_counter = 0;
-        }
-        else
-        {
+        } else {
             // block to retrieve numbers from the text
-            if (isdigit(ch) || ch == '+' || ch == '-')
-            {
+            if (isdigit(ch) || ch == '+' || ch == '-') {
                 str_number.push_back(ch);
-            }
-            else
-            {
-                if (!str_number.empty())
-                {
-                    if (str_number[0] != '+' && str_number[0] != '-')
-                    {
+            } else {
+                if (!str_number.empty()) {
+                    if (str_number[0] != '+' && str_number[0] != '-') {
                         // skip +N or -N
                         options.push_back(stoi(str_number));
                     }
@@ -85,8 +77,7 @@ void read_content(
             } // end of block
 
             // block to retrieve an item that might help
-            if (has_needed_item)
-            {
+            if (has_needed_item) {
                 if (ch != '`') optional_item.push_back(ch);
             } // end of block
             std::cout << ch;
@@ -101,18 +92,15 @@ std::string open_file(std::string& filename)
     std::ifstream file(filename);
     std::string content;
 
-    if (!file.is_open())
-    {
-        log::error("Looks like the file " + filename +
-                    " cannot be read/found.");
+    if (!file.is_open()) {
+        log::error(
+            "Looks like the file " + filename +
+            " cannot be read/found.");
         file.close();
         return "";
     }
 
-    while (std::getline(file, content))
-    {
-        content+= content;
-    }
+    while (std::getline(file, content)) { content += content; }
     file.close();
 
     return content;

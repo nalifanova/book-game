@@ -6,20 +6,21 @@
 #include "comment.h"
 #include "log.h"
 
-enum StepType {
-    a_default,
-    a_condition,
-    a_fight,
-    an_item_adding,
-    checking_luck,
-    a_final = 9
+enum StepType
+{
+    e_default,
+    e_condition,
+    e_fight,
+    e_item_adding,
+    e_checking_luck,
+    e_final = 9
 };
 
 struct Step
 {
     std::string name;
     int id;
-    StepType type = a_default;
+    StepType type = e_default;
 };
 
 class Path
