@@ -3,8 +3,6 @@
 
 #include "actions.h"
 #include "creature.h"
-#include "object_factory.h"
-#include "path.h"
 
 void fight_with_raul(Player& player);
 

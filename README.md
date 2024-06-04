@@ -10,7 +10,7 @@
 </div>
 
 ## Idea
-I started learning C++ on March 14, 2024. My guide was a book "Programming 
+When I started learning C++, my guide was a book "Programming 
 Abstractions in C++ by Eric S. Roberts Stanford University Spring Quarter 2012".
 It took me a month to proceed and get acquainted with very basics. In a month,
 on April 14, to make the learning process more enjoyable, I decided to create a 

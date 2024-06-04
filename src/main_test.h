@@ -210,12 +210,12 @@ inline void test_path()
     test_line;
     Path path = Path();
 
-    path.add_step({"Maze Gates", 1, a_condition});
-    path.add_step(Step{"left", 486, a_condition});
-    path.add_step(Step{"to magic", 114, a_condition});
+    path.add_step({"Maze Gates", 1, e_condition});
+    path.add_step(Step{"left", 486, e_condition});
+    path.add_step(Step{"to magic", 114, e_condition});
     path.add_step(Step{"Belief word", 77});
-    path.add_step(Step{"magic works", 183, a_condition});
-    path.add_step(Step{"go to roses", 2, a_condition});
+    path.add_step(Step{"magic works", 183, e_condition});
+    path.add_step(Step{"go to roses", 2, e_condition});
     path.add_step(Step{"pick up white rose", 615});
 
     path.comment.turn_messages_on();

@@ -8,13 +8,13 @@ Item::Item(
     int id,
     int slots_amount,
     std::function<int(int, int)> sign
-)
+    )
 {
     this->name = std::move(name);
     this->id = id;
     this->slots_amount = slots_amount;
-//    std::function<int(int, int)> op = std::plus<int>();
-//    int c = op(a, b);
+    //    std::function<int(int, int)> op = std::plus<int>();
+    //    int c = op(a, b);
     m_sign = std::move(sign);
 }
 

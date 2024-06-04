@@ -17,47 +17,80 @@ void create_attributes(int& dexterity, int& hp, int& charisma, int& luck)
 {
     int attribute_number = roll_dice();
     luck = roll_dice();
-    switch(attribute_number)
-    {
+    switch (attribute_number) {
         case 2:
-            dexterity = 8; hp = 22; charisma = 8; break;
+            dexterity = 8;
+            hp = 22;
+            charisma = 8;
+            break;
         case 3:
-            dexterity = 10; hp = 20; charisma = 6; break;
+            dexterity = 10;
+            hp = 20;
+            charisma = 6;
+            break;
         case 4:
-            dexterity = 12; hp = 16; charisma = 5; break;
+            dexterity = 12;
+            hp = 16;
+            charisma = 5;
+            break;
         case 5:
-            dexterity = 9; hp = 18; charisma = 8; break;
+            dexterity = 9;
+            hp = 18;
+            charisma = 8;
+            break;
         case 6:
-            dexterity = 11; hp = 20; charisma = 6; break;
+            dexterity = 11;
+            hp = 20;
+            charisma = 6;
+            break;
         case 7:
-            dexterity = 9; hp = 20; charisma = 7; break;
+            dexterity = 9;
+            hp = 20;
+            charisma = 7;
+            break;
         case 8:
-            dexterity = 10; hp = 16; charisma = 7; break;
+            dexterity = 10;
+            hp = 16;
+            charisma = 7;
+            break;
         case 9:
-            dexterity = 8; hp = 24; charisma = 7; break;
+            dexterity = 8;
+            hp = 24;
+            charisma = 7;
+            break;
         case 10:
-            dexterity = 9; hp = 22; charisma = 6; break;
+            dexterity = 9;
+            hp = 22;
+            charisma = 6;
+            break;
         case 11:
-            dexterity = 10; hp = 18; charisma = 7; break;
+            dexterity = 10;
+            hp = 18;
+            charisma = 7;
+            break;
         case 12:
-            dexterity = 11; hp = 20; charisma = 5; break;
+            dexterity = 11;
+            hp = 20;
+            charisma = 5;
+            break;
         default:
-            dexterity = 0; hp = 0; charisma = 0; break;
+            dexterity = 0;
+            hp = 0;
+            charisma = 0;
+            break;
     }
 }
 
 void fight(Creature& enemy, Player& player)
 {
-    if (player.comment.is_active())
-    {
+    if (player.comment.is_active()) {
         log::warning("You start a fight with " + enemy.get_name());
-        log::msg(std::string(row::kUnderlineLength, '-'));
+        log::msg(std::string(row::k_underline_length, '-'));
     }
 
     int enemy_hit;
     int player_hit;
-    while(enemy.is_alive() && player.is_alive())
-    {
+    while (enemy.is_alive() && player.is_alive()) {
         enemy_hit = enemy.hit(roll_dice());
         player_hit = player.hit(roll_dice());
 
@@ -65,36 +98,30 @@ void fight(Creature& enemy, Player& player)
             "You hit " + std::to_string(player_hit) + ", " +
             enemy.get_name() + " hits " + std::to_string(enemy_hit) + ": ",
             ""
-        );
+            );
 
-        if (enemy_hit == player_hit)
-        {
+        if (enemy_hit == player_hit) {
             player.comment.text("fight and block, all good");
-        }
-        else if (enemy_hit > player_hit)
-        {
+        } else if (enemy_hit > player_hit) {
             player.receive_damage();
             player.comment.text(
                 "your HP -2 (" +
                 std::to_string(player.get_hp()) + ")"
-            );
-        }
-        else
-        {
+                );
+        } else {
             enemy.receive_damage();
             player.comment.text(
                 "enemy's HP -2 (" +
                 std::to_string(enemy.get_hp()) + ")"
-            );
+                );
         }
     }
-    if (player.comment.is_active())
-    {
+    if (player.comment.is_active()) {
         log::warning(
             "My HP after fight is " +
             std::to_string(player.get_hp())
-        );
-        log::msg(std::string(row::kUnderlineLength, '-'));
+            );
+        log::msg(std::string(row::k_underline_length, '-'));
     }
 }
 
@@ -107,8 +134,7 @@ void comments_on(Player& player, Inventory& inventory, Path& path)
 
 bool is_game_over(Player& player)
 {
-    if (!player.is_alive())
-    {
+    if (!player.is_alive()) {
         log::error("You are dead. Game over!");
         return true;
     }

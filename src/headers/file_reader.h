@@ -15,7 +15,7 @@ void read_content(
     std::vector<int>& options,
     std::string& optional_item,
     char& special_symbol
-);
+    );
 
 // might be deprecated
 std::string open_file(std::string& filename);

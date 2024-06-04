@@ -5,8 +5,8 @@
 
 #include "comment.h"
 
-const int kStrengthLoss = 2;
-const int kFoodValue = 4;
+constexpr int k_strength_loss = 2;
+constexpr int k_food_value = 4;
 
 class Creature
 {
@@ -64,7 +64,7 @@ public:
     ~Beast() override;
 };
 
-class Player : public Creature
+class Player: public Creature
 {
 public:
     Player(std::string name, int dexterity, int hp, int& charisma, int& luck);
