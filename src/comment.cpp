@@ -64,7 +64,7 @@ void Comment::message(const std::string& message, bool type) const
 
 void Comment::message(
     const std::string& message,
-    bool type,
+    const bool type,
     const std::string& item_name
 ) const
 {

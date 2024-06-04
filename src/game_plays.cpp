@@ -1,6 +1,7 @@
 #include "headers/game_plays.h"
 
 #include "headers/game_steps.h"
+#include "headers/globals.h"
 #include "headers/object_factory.h"
 
 // l_<function_name> - local functions

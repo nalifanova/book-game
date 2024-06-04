@@ -2,7 +2,6 @@
 #define BOOK_GAME_ACTIONS_H
 
 #include "creature.h"
-#include "globals.h"
 #include "inventory.h"
 #include "path.h"
 
@@ -24,6 +23,6 @@ void fight(Creature& enemy, Player& player);
 
 void comments_on(Player& player, Inventory& inventory, Path& path);
 
-bool is_game_over(Player& player);
+bool is_game_over(const Player& player);
 
 #endif //BOOK_GAME_ACTIONS_H

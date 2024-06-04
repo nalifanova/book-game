@@ -1,21 +1,22 @@
 #include "headers/actions.h"
 
 #include "headers/creature.h"
+#include "headers/globals.h"
 #include "headers/random.h"
 
-int roll_dice(bool two_dice)
+int roll_dice(const bool two_dice)
 {
-    int d1 = random_integer(1, 6);
+    const int d1 = random_integer(1, 6);
     if (!two_dice) return d1;
 
-    int d2 = random_integer(1, 6);
-    int total = d1 + d2;
+    const int d2 = random_integer(1, 6);
+    const int total = d1 + d2;
     return total;
 }
 
 void create_attributes(int& dexterity, int& hp, int& charisma, int& luck)
 {
-    int attribute_number = roll_dice();
+    const int attribute_number = roll_dice();
     luck = roll_dice();
     switch (attribute_number) {
         case 2:
@@ -88,11 +89,9 @@ void fight(Creature& enemy, Player& player)
         log::msg(std::string(row::k_underline_length, '-'));
     }
 
-    int enemy_hit;
-    int player_hit;
     while (enemy.is_alive() && player.is_alive()) {
-        enemy_hit = enemy.hit(roll_dice());
-        player_hit = player.hit(roll_dice());
+        const int enemy_hit = enemy.hit(roll_dice());
+        const int player_hit = player.hit(roll_dice());
 
         player.comment.text(
             "You hit " + std::to_string(player_hit) + ", " +
@@ -132,7 +131,7 @@ void comments_on(Player& player, Inventory& inventory, Path& path)
     path.comment.turn_messages_on();
 }
 
-bool is_game_over(Player& player)
+bool is_game_over(const Player& player)
 {
     if (!player.is_alive()) {
         log::error("You are dead. Game over!");
